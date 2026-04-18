@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/i18n/LanguageContext";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-horizontal.png";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -21,7 +21,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-md border-b border-border">
       <div className="container flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="Modern Generation of Excellence Company" className="h-14 w-auto object-contain" />
+          <img src={logo} alt="Modern Generation of Excellence Company" className="h-16 md:h-20 w-auto object-contain" />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
