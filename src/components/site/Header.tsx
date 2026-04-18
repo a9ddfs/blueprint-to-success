@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/i18n/LanguageContext";
@@ -8,14 +8,32 @@ import logo from "@/assets/logo-horizontal.png";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const { t, toggle, lang } = useLang();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const links = [
-    { label: t.nav.home, href: "#home" },
-    { label: t.nav.about, href: "#about" },
-    { label: t.nav.projects, href: "#projects" },
-    { label: t.nav.services, href: "#services" },
-    { label: t.nav.contact, href: "#contact" },
+    { label: t.nav.home, hash: "home" },
+    { label: t.nav.about, hash: "about" },
+    { label: t.nav.projects, hash: "projects" },
+    { label: t.nav.services, hash: "services" },
+    { label: t.nav.contact, hash: "contact" },
   ];
+
+  const handleNavClick = (e: React.MouseEvent, hash: string) => {
+    e.preventDefault();
+    setOpen(false);
+    if (location.pathname !== "/") {
+      navigate(`/#${hash}`);
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+        else if (hash === "contact") document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background/90 backdrop-blur-md border-b border-border">
@@ -26,7 +44,7 @@ const Header = () => {
 
         <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm font-medium text-foreground hover:text-gold transition-smooth">
+            <a key={l.hash} href={`/#${l.hash}`} onClick={(e) => handleNavClick(e, l.hash)} className="text-sm font-medium text-foreground hover:text-gold transition-smooth cursor-pointer">
               {l.label}
             </a>
           ))}
@@ -58,7 +76,7 @@ const Header = () => {
         <div className="lg:hidden border-t border-border bg-background animate-fade-in">
           <nav className="container py-4 flex flex-col gap-4">
             {links.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-base font-medium py-2 text-foreground hover:text-gold">
+              <a key={l.hash} href={`/#${l.hash}`} onClick={(e) => handleNavClick(e, l.hash)} className="text-base font-medium py-2 text-foreground hover:text-gold cursor-pointer">
                 {l.label}
               </a>
             ))}
