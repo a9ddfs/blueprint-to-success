@@ -20,10 +20,10 @@ export const translations = {
       cta2: "تواصل معنا",
     },
     stats: [
-      { num: "+15", label: "مشروع منجز" },
-      { num: "+8", label: "عملاء ثقة" },
-      { num: "+5", label: "سنوات خبرة" },
-      { num: "100%", label: "مشاريع حكومية وتجارية" },
+      { value: 15, prefix: "+", suffix: "", label: "مشروع منجز" },
+      { value: 8, prefix: "+", suffix: "", label: "عملاء ثقة" },
+      { value: 5, prefix: "+", suffix: "", label: "سنوات خبرة" },
+      { value: 100, prefix: "", suffix: "%", label: "مشاريع حكومية وتجارية" },
     ],
     services: {
       kicker: "خدماتنا",
@@ -40,9 +40,10 @@ export const translations = {
       kicker: "سجل الإنجاز",
       title: "مشاريعنا تتحدث عنا",
       items: [
-        { type: "مشروع حكومي", city: "الرياض", title: "مبنى إداري حكومي" },
-        { type: "مشروع تجاري", city: "الرياض", title: "برج تجاري متعدد الاستخدامات" },
-        { type: "مشروع سكني", city: "جدة", title: "فيلا سكنية فاخرة" },
+        { type: "تجاري", city: "الرياض", title: "مشروع مبنى إداري" },
+        { type: "حكومي", city: "الرياض", title: "مشروع إنشاء" },
+        { type: "تجاري", city: "الرياض", title: "مجمع تجاري" },
+        { type: "حكومي", city: "جدة", title: "مشروع تشطيب" },
       ],
     },
     why: {
@@ -133,10 +134,10 @@ export const translations = {
       cta2: "Contact Us",
     },
     stats: [
-      { num: "+15", label: "Completed Projects" },
-      { num: "+8", label: "Trusted Clients" },
-      { num: "+5", label: "Years of Experience" },
-      { num: "100%", label: "Government & Commercial" },
+      { value: 15, prefix: "+", suffix: "", label: "Completed Projects" },
+      { value: 8, prefix: "+", suffix: "", label: "Trusted Clients" },
+      { value: 5, prefix: "+", suffix: "", label: "Years of Experience" },
+      { value: 100, prefix: "", suffix: "%", label: "Government & Commercial" },
     ],
     services: {
       kicker: "Our Services",
@@ -153,9 +154,10 @@ export const translations = {
       kicker: "Track Record",
       title: "Our projects speak for us",
       items: [
-        { type: "Government", city: "Riyadh", title: "Government Administrative Building" },
-        { type: "Commercial", city: "Riyadh", title: "Multi-purpose Commercial Tower" },
-        { type: "Residential", city: "Jeddah", title: "Luxury Residential Villa" },
+        { type: "Commercial", city: "Riyadh", title: "Administrative Building" },
+        { type: "Government", city: "Riyadh", title: "Construction Project" },
+        { type: "Commercial", city: "Riyadh", title: "Commercial Complex" },
+        { type: "Government", city: "Jeddah", title: "Finishing Project" },
       ],
     },
     why: {
