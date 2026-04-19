@@ -44,6 +44,14 @@ const Footer = () => {
             </li>
           </ul>
 
+          <div className="mt-5">
+            <h5 className="font-display font-bold text-gold text-sm mb-2">{t.footer.hoursTitle}</h5>
+            <ul className="space-y-1 text-sm text-white/70">
+              <li>{t.footer.hours1}</li>
+              <li>{t.footer.hours2}</li>
+            </ul>
+          </div>
+
           <div className="mt-5 flex items-center gap-3">
             <a
               href="https://www.instagram.com/mgx.sa"

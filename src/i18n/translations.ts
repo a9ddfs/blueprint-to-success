@@ -81,6 +81,9 @@ export const translations = {
       address: "المنصورية - الرياض، المملكة العربية السعودية",
       rights: "جميع الحقوق محفوظة.",
       company: "شركة جيل التميز الحديثة للمقاولات",
+      hoursTitle: "أوقات العمل",
+      hours1: "الأحد - الخميس: 10:00 ص - 7:00 م",
+      hours2: "السبت: 2:00 م - 8:00 م",
     },
     quote: {
       pageTitle: "اطلب عرض سعر",
@@ -206,6 +209,9 @@ export const translations = {
       address: "Al-Mansouriah - Riyadh, Saudi Arabia",
       rights: "All rights reserved.",
       company: "Modern Excellence Generation Contracting",
+      hoursTitle: "Working Hours",
+      hours1: "Sunday - Thursday: 10:00 AM - 7:00 PM",
+      hours2: "Saturday: 2:00 PM - 8:00 PM",
     },
     quote: {
       pageTitle: "Request a Quote",
