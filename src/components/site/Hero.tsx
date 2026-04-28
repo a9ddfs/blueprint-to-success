@@ -64,7 +64,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.7 }}
-            className="font-hero font-black text-3xl md:text-5xl lg:text-6xl text-white leading-[1.2] mb-3"
+            className="font-hero font-black text-3xl md:text-5xl lg:text-6xl text-white leading-[1.2] mb-8"
           >
             {t.hero.title1}
           </motion.h1>

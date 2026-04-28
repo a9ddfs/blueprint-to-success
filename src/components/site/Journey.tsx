@@ -34,11 +34,8 @@ const Journey = () => {
           <p className="text-muted-foreground">{t.journey.sub}</p>
         </motion.div>
 
-        {/* ===== موبايل: عمودي 1 -> 4 مع خط رأسي ===== */}
+        {/* ===== موبايل: عمودي 1 -> 4 ===== */}
         <div className="md:hidden relative max-w-sm mx-auto px-4">
-          {/* الخط الرأسي المتقطع */}
-          <div className="absolute top-12 bottom-12 left-1/2 -translate-x-1/2 border-l-2 border-dashed border-gold/60" />
-
           <div className="flex flex-col gap-10 relative">
             {orderedMobile.map((s, i) => {
               const Icon = iconsMobile[i];
@@ -67,10 +64,8 @@ const Journey = () => {
           </div>
         </div>
 
-        {/* ===== ديسكتوب: أفقي مع خط ===== */}
+        {/* ===== ديسكتوب: أفقي ===== */}
         <div className="hidden md:block relative max-w-5xl mx-auto px-4">
-          <div className="absolute top-12 left-[8%] right-[8%] border-t-2 border-dashed border-gold/60" />
-
           <div className="grid grid-cols-4 gap-4 relative">
             {orderedDesktop.map((s, i) => {
               const Icon = iconsDesktop[i];
