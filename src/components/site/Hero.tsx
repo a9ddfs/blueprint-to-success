@@ -81,7 +81,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="flex flex-wrap gap-4 lg:justify-center"
+            className="flex flex-wrap gap-4 justify-center"
           >
             <Button
               asChild
