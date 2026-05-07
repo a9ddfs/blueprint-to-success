@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
+import { useRef } from "react";
 import heroBg from "@/assets/hero-bg-new.jpg";
 import heroBgDesktop from "@/assets/hero-bg-desktop.png";
 
@@ -11,27 +12,43 @@ const Hero = () => {
   const Arrow = dir === "rtl" ? ArrowLeft : ArrowRight;
   const overlayDirection = dir === "rtl" ? "to left" : "to right";
 
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+
   return (
     <section
+      ref={sectionRef}
       id="home"
       className="relative w-full min-h-[600px] lg:min-h-[640px] flex items-center justify-center overflow-hidden border-b-4 border-gold"
     >
-      {/* Background image */}
-      <picture>
-        <source media="(min-width: 1000px)" srcSet={heroBgDesktop} />
-        <img
-          src={heroBg}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
-          width={1920}
-          height={1080}
-        />
-      </picture>
+      {/* Parallax background image */}
+      <motion.div
+        style={{ y, scale }}
+        className="absolute inset-0 will-change-transform"
+        aria-hidden="true"
+      >
+        <picture>
+          <source media="(min-width: 1000px)" srcSet={heroBgDesktop} />
+          <img
+            src={heroBg}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-[120%] object-cover"
+            width={1920}
+            height={1080}
+          />
+        </picture>
+      </motion.div>
 
       {/* Overlay for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/80" aria-hidden="true" />
       <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
+
 
       {/* Content */}
       <div className="container relative z-10 py-20">
