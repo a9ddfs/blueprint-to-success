@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { useRef } from "react";
-import heroBg from "@/assets/hero-bg-new.jpg";
+import heroBgMobile from "@/assets/hero-bg-mobile.png";
 import heroBgDesktop from "@/assets/hero-bg-desktop.png";
 
 const Hero = () => {
