@@ -45,9 +45,8 @@ const Hero = () => {
         </picture>
       </motion.div>
 
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/50 to-primary/80" aria-hidden="true" />
-      <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
+      {/* Subtle overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/60" aria-hidden="true" />
 
 
       {/* Content */}
