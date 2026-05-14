@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Phone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { useRef } from "react";
-import heroBg from "@/assets/hero-bg-new.jpg";
+import heroBgMobile from "@/assets/hero-bg-mobile.png";
 import heroBgDesktop from "@/assets/hero-bg-desktop.png";
 
 const Hero = () => {
@@ -35,7 +35,7 @@ const Hero = () => {
         <picture>
           <source media="(min-width: 1000px)" srcSet={heroBgDesktop} />
           <img
-            src={heroBg}
+            src={heroBgMobile}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-[120%] object-cover"
