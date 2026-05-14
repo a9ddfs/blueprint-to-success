@@ -35,7 +35,7 @@ const Hero = () => {
         <picture>
           <source media="(min-width: 1000px)" srcSet={heroBgDesktop} />
           <img
-            src={heroBg}
+            src={heroBgMobile}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-[120%] object-cover"
